@@ -1,16 +1,19 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React, {useState} from 'react';
 
 import ProductList from './ProductList';
 import {Addproduct} from './Addproduct';
+import {Editproduct} from './Editproduct';
 
-import useStorage from '../../hooks/useStorage';
+import useStorage from '../../hooks/useStograte';
 
 export const Manageprd = (props) => {
 
     const [filter, setFilter] = useState('');
     const [modal, setModal] = useState(false);
-    const [item, setItem] = useState({});
+    const [modalEdit, setModalEdit] = useState(false);
+    const [id, setId] = useState(0);
     const [items, addItem, putItem, deleteItem] = useStorage([]);
     
     let products = items;
@@ -21,23 +24,23 @@ export const Manageprd = (props) => {
     
     const handleEdit = (item) => {
         putItem(item);
+        setModalEdit(false);
     }
     
     if (filter) {
         products = items.filter(item => {
-          return item.name_prd.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
+            return item.name_prd.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
         });
     }
     
     const onHandleAdd = (item) => {
         addItem(item);
+        setModal(false);
     }
     
     const handleGetItem = (id) => {
-        let index = items.findIndex(item => item.id === id);
-        
-        setItem({...items[index]});
-        setModal(true);
+        setId(id);
+        setModalEdit(true);
     }
 
     return (
@@ -81,10 +84,16 @@ export const Manageprd = (props) => {
                 />
             </div>
             {
-              modal && <Addproduct 
-                  onHandleSetModal={setModal} 
-                  onHandleAdd={onHandleAdd}
-                  item={item}
+                modal && <Addproduct 
+                    onHandleSetModal={setModal} 
+                    onHandleAdd={onHandleAdd}
+                />
+            }
+            {
+                modalEdit && <Editproduct 
+                    id={id} 
+                    onHandleSetModal={setModalEdit}
+                    handleEdit={handleEdit}
                 />
             }
         </div>

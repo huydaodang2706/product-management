@@ -1,10 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { useState } from 'react';
 
 
 
 export const Addproduct = (props) => {
-    const [cates, setCates] = useState([]);
 
     const [form, setForm] = useState({
         id: null,
@@ -94,25 +94,6 @@ export const Addproduct = (props) => {
                                     className="form-control"
                                     value={form['price']}
                                 />
-                            </div>
-                            <div className="form-group mt-2">
-                                <label>Danh mục</label>
-                                <select
-                                    onChange={(e) => setForm({ ...form, cate_id: e.target.value })}
-                                    name="category_id"
-                                    className="form-control"
-                                    value={form['cate_id']}
-                                >
-                                    <option value={0}>-- CHỌN DANH MỤC --</option>
-                                    {cates?.length > 0 ? cates.map(cate => {
-                                        return (
-                                            <option value={cate?.id} >{cate?.name_cate}</option>
-                                        )
-                                    })
-                                        :
-                                        <h1>no data</h1>
-                                    }
-                                </select>
                             </div>
                             <div className="form-group mt-2">
                                 <label>Trạng thái</label>

@@ -1,6 +1,34 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, {useState} from 'react'
+import DashboardItem from './DashboardItem'
 
 export const Dashboard = () => {
+    const [items, setItems] = useState([
+        {
+            type: 'product',
+            icon: 'fa-shopping-bag dashboard-icon',
+            name: 'Sản phẩm',
+            quantity: '10'
+        },
+        {
+            type: 'comment',
+            icon: 'fa-clipboard-list dashboard-icon',
+            name: 'Loại sản phẩm',
+            quantity: "1"
+        },
+        {
+            type: 'user',
+            icon: 'fa-user-chart dashboard-icon',
+            name: 'Người dùng',
+            quantity: '10'
+        },
+        {
+            type: 'advertisement',
+            icon: 'fa-ad dashboard-icon',
+            name: 'Quảng cáo',
+            quantity: '100k'
+        },
+    ])
     return (
         <div className="col-md-10 px-0 content-box">
             <div className="col-md-10 px-0 content-box">
@@ -8,7 +36,7 @@ export const Dashboard = () => {
                     <div className="container-fluid breadcrumb-box">
                         <ol className="breadcrumb mb-0">
                             <li className="breadcrumb-item">
-                                <a href="#">
+                                <a>
                                     <i className="fal fa-home-alt home-icon"></i>
                                 </a>
                             </li>
@@ -22,57 +50,14 @@ export const Dashboard = () => {
                         <h1 className="page-title">Dashboard</h1>
                     </div>
                     <div className="row dashboard">
-                        <div className="col-md-3">
-                            <div className="dashboard-info product">
-                                <div className="row h-100">
-                                    <div className="col-md-5 icon">
-                                        <i className="fal fa-shopping-bag dashboard-icon"></i>
-                                    </div>
-                                    <div className="col-md-7 info">
-                                        <div className="quantity"></div>
-                                        <div className="discription"> Sản phẩm</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dashboard-info comment">
-                                <div className="row h-100">
-                                    <div className="col-md-5 icon">
-                                        <i className="fal fa-clipboard-list dashboard-icon"></i>
-                                    </div>
-                                    <div className="col-md-7 info">
-                                        <div className="quantity"></div>
-                                        <div className="discription"> Loại sản phẩm</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dashboard-info user">
-                                <div className="row h-100">
-                                    <div className="col-md-5 icon">
-                                        <i className="fal fa-user-chart dashboard-icon"></i>
-                                    </div>
-                                    <div className="col-md-7 info">
-                                        <div className="quantity"></div>                                        <div className="discription"> Người dùng</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3">
-                            <div className="dashboard-info advertisement">
-                                <div className="row h-100">
-                                    <div className="col-md-5 icon">
-                                        <i className="fal fa-ad dashboard-icon"></i>
-                                    </div>
-                                    <div className="col-md-7 info">
-                                        <div className="quantity">23,4k</div>
-                                        <div className="discription"> Quảng cáo</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            items.map((item, index) => {
+                                return <DashboardItem 
+                                    key={index}
+                                    item={item}
+                                />
+                            })
+                        }
                     </div>
                 </div>
             </div>

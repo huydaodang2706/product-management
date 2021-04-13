@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 const ProductItem = (props) => {
     
     const {id, name_prd, price, is_hot, is_sale, image} = props.product;
@@ -9,7 +10,10 @@ const ProductItem = (props) => {
     }
     
     const handleDeleteproduct =  (id_prd) => { 
-        props.handleDelete(id_prd);
+        let check = window.confirm('Are you sure you want to delete?');
+        if (check) {
+            props.handleDelete(id_prd);
+        }
     }
     
 
