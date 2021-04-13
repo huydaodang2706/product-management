@@ -1,19 +1,18 @@
-import React from 'react';
-
 const ProductItem = (props) => {
     
     const {id, name_prd, price, is_hot, is_sale, image} = props.product;
     
     var img = require(`./Image/${image}.jpg`).default;
     
-    const handleDeleteproduct =  (id_prd) => { 
-        props.handleDelete(id_prd);
-    }
-    
     const handleGetItem = (id) => {
         props.handleGetItem(id);
     }
     
+    const handleDeleteproduct =  (id_prd) => { 
+        props.handleDelete(id_prd);
+    }
+    
+
     return (
         <tr>
             <td>{id}</td>
@@ -29,6 +28,7 @@ const ProductItem = (props) => {
                 {is_sale&&<span className="badge bg-success">sale</span>}                                  
             </td>
             <td></td>
+            
             <td>
                 <button type="button" className="btn btn-primary" onClick={() => handleGetItem(id)}>
                     <i className="far fa-edit"></i>
