@@ -1,15 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/alt-text */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-import {URL} from '../../contants';
+import {URL} from '../../constants';
 
 
 export const Editproduct = (props) => {
 
-    const id_prd = props?.id
-    const id_cate = props?.id_cate
-    
-    const [cates, setCates] = useState([]);
+    const id_prd = props?.id;
 
     const [form, setForm] = useState({
         id: null,
@@ -32,25 +31,6 @@ export const Editproduct = (props) => {
             setForm(res.data);
         })
     }, []);
-
-    useEffect(() => {
-        axios({
-            method: "GET",
-            url: 'http://localhost/MyLaravel/public/api/category',
-            data: null,
-        }).then(res => {
-            console.log(res.data);
-            setCates([...res.data]);         
-        })
-    },[])
-
-    const handleEditproduct = e => {
-       
-    }
-
-    const handleEditimage = e => {
-        
-    }
     
     const handleEdit = (e) => {
         e.preventDefault();
@@ -73,7 +53,7 @@ export const Editproduct = (props) => {
     
     const onHandleClose = () => {
         onHandleReset();
-        props.onHandleSetModal(false)
+        props.onHandleSetModal(false);
     }
 
 
@@ -129,34 +109,15 @@ export const Editproduct = (props) => {
                                 />
                             </div>
                             <div className="form-group mt-2">
-                                <label>Danh mục</label>
-                                <select
-                                    onChange={(e) => setForm({ ...form, cate_id: e.target.value })}
-                                    name="category_id"
-                                    className="form-control"
-                                    value={form['cate_id']}
-                                >
-                                    <option value={0}>-- CHỌN DANH MỤC --</option>
-                                    {cates?.length > 0 ? cates.map(cate => {
-                                        return (
-                                            <option value={cate?.id} >{cate?.name_cate}</option>
-                                        )
-                                    })
-                                        :
-                                        <h1>no data</h1>
-                                    }
-                                </select>
-                            </div>
-                            <div className="form-group mt-2">
                                 <label>Trạng thái</label>
                                 <div className="checkbox">
                                     <label>
                                         Giảm giá
-                                    </label> &nbsp;
+                                    </label> {'  '}
                                     <input 
                                         name="is_sale" type="checkbox" 
                                         onChange={(e) => e.target.checked ? setForm({...form, is_sale: true}) : setForm({...form, is_sale: false})} 
-                                        value = {form['is_sale']}
+                                        checked = {form['is_sale']}
                                     />
                                 </div>
                             </div>
@@ -165,11 +126,11 @@ export const Editproduct = (props) => {
                                 <div className="checkbox">
                                     <label>
                                         Nổi bật
-                                    </label>&nbsp;
+                                    </label>{'  '}
                                     <input 
                                         name="is_top" type="checkbox" 
                                         onChange = {(e) => e.target.checked ? setForm({...form, is_hot: true}) : setForm({...form, is_hot: false})}
-                                        value = {form['is_hot']}
+                                        checked = {form['is_hot']}
                                     />
                                 </div>
                             </div>
