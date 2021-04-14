@@ -7,25 +7,25 @@ export const Dashboard = () => {
         {
             type: 'product',
             icon: 'fa-shopping-bag dashboard-icon',
-            name: 'Sản phẩm',
+            name: '製品',
             quantity: '10'
         },
         {
             type: 'comment',
             icon: 'fa-clipboard-list dashboard-icon',
-            name: 'Loại sản phẩm',
+            name: '製品型',
             quantity: "1"
         },
         {
             type: 'user',
             icon: 'fa-user-chart dashboard-icon',
-            name: 'Người dùng',
+            name: 'ユーザー',
             quantity: '10'
         },
         {
             type: 'advertisement',
             icon: 'fa-ad dashboard-icon',
-            name: 'Quảng cáo',
+            name: '広告',
             quantity: '100k'
         },
     ])
@@ -40,14 +40,14 @@ export const Dashboard = () => {
                                     <i className="fal fa-home-alt home-icon"></i>
                                 </a>
                             </li>
-                            <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            <li className="breadcrumb-item active" aria-current="page">ダッシュボード </li>
                         </ol>
                     </div>
                 </nav>
                 
                 <div className="container-fluid">
                     <div className="row">
-                        <h1 className="page-title">Dashboard</h1>
+                        <h1 className="page-title">ダッシュボード </h1>
                     </div>
                     <div className="row dashboard">
                         {

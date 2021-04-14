@@ -28,8 +28,8 @@ const ProductItem = (props) => {
                 </div>
             </td>
             <td>                             
-                {is_hot&&<span className="badge bg-danger">hot</span>}                                                             
-                {is_sale&&<span className="badge bg-success">sale</span>}                                  
+                {is_hot&&<span className="badge bg-danger">ホット</span>}                                                             
+                {is_sale&&<span className="badge bg-success">セール</span>}                                  
             </td>
             <td>
                 {desc}

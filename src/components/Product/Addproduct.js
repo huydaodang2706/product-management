@@ -49,7 +49,7 @@ export const Addproduct = (props) => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Add Product</h5>
+                <h5 className="modal-title" id="exampleModalLabel">製品追加</h5>
                 <button 
                     type="button" 
                     className="btn-close" 
@@ -62,7 +62,7 @@ export const Addproduct = (props) => {
                     <div className="row">
                         <div className="col-md-12 ">
                             <div className="form-group">
-                                <label>Tên sản phẩm</label>
+                                <label>	製品名</label>
                                 <input onChange={(e) => setForm({ ...form, name_prd: e.target.value })}
                                     name="name"
                                     className="form-control"
@@ -71,7 +71,7 @@ export const Addproduct = (props) => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>Ảnh sản phẩm</label>&nbsp;&nbsp;
+                                <label>イメージ</label>
                                 <input required name='image' id="product-image-input" type="file" 
                                     onChange={(e)=>{
                                         setForm({...form, image: e.target.files[0].name.split('.', 1)});
@@ -87,7 +87,7 @@ export const Addproduct = (props) => {
                                 </div>}
                             </div>
                             <div className="form-group mt-2">
-                                <label>Giá sản phẩm</label>
+                                <label>価格</label>
                                 <input onChange={(e) => setForm({ ...form, price: e.target.value })}
                                     name="price"
                                     type="number"
@@ -96,10 +96,10 @@ export const Addproduct = (props) => {
                                 />
                             </div>
                             <div className="form-group mt-2">
-                                <label>Trạng thái</label>
+                                <label>状態</label>
                                 <div className="checkbox">
                                     <label>
-                                        Giảm giá
+                                        セール
                                     </label> &nbsp;
                                     <input 
                                         name="is_sale" type="checkbox" 
@@ -109,10 +109,10 @@ export const Addproduct = (props) => {
                                 </div>
                             </div>
                             <div className="form-group mt-2">
-                                <label>Sản phẩm nổi bật</label>
+                                <label>ホット製品</label>
                                 <div className="checkbox">
                                     <label>
-                                        Nổi bật
+                                        ホット
                                     </label>&nbsp;
                                     <input 
                                         name="is_top" type="checkbox" 
@@ -122,7 +122,7 @@ export const Addproduct = (props) => {
                                 </div>
                             </div>
                             <div className="form-group mt-2">
-                                <label>Mô tả sản phẩm</label>
+                                <label>記述</label>
                                 <textarea 
                                     name="discription" 
                                     className="form-control desc" rows="3" col="10"

@@ -56,25 +56,25 @@ export const Manageprd = (props) => {
                                     <i className="fal fa-home-alt home-icon"></i>
                                 </a>
                             </li>
-                            <li className="breadcrumb-item active" aria-current="page">Quản lý sản phẩm</li>
+                            <li className="breadcrumb-item active" aria-current="page">製品管理</li>
                         </ol>
                     </div>
             </nav>
             
             <div className="container-fluid">
                 <div className="row">
-                    <h1 className="page-title">Quản lý sản phẩm</h1>
+                    <h1 className="page-title">製品管理</h1>
                 </div>
                 <br></br>
                 <div className="row product-manage container">
                     <div className="px-0 mb-3 f-lex">
                         <button type="button" className="btn btn-success" onClick={()=>{setModal(true)}}>
-                            <i className="fas fa-plus"></i> Thêm mới sản phẩm
+                            <i className="fas fa-plus"></i> 新しく追加
                         </button>
                         <input 
                             className="input-filter" 
                             type="text" 
-                            placeholder="Search.." 
+                            placeholder="探索..." 
                             onChange={(e) => {setFilter(e.target.value)}}
                         />
                     </div>             

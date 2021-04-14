@@ -21,12 +21,12 @@ const ProductList = (props) => {
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Tên sản phẩm</th>
-                <th>Giá</th>
-                <th>Ảnh sản phẩm</th>
-                <th>Trạng thái</th>
-                <th>Mô tả</th>
-                <th>Hành động</th>
+                <th>製品名</th>
+                <th>価格</th>
+                <th>イメージ</th>
+                <th>状態</th>
+                <th>記述</th>
+                <th>アクション</th>
             </tr>
         </thead>
         <tbody>

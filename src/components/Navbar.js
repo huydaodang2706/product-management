@@ -8,8 +8,8 @@ const Nav = (props) => {
                     className="btn btn-primary btn-lg mt-1"
                     onClick={() => props.onHandleSetRoute(0)}
                 >
-                    <i className="fal fa-tachometer-alt-average"></i> &nbsp;
-                    Dashboard
+                    <i className="fal fa-tachometer"></i> &nbsp;
+                    ダッシュボード
                 </button>
             </li>
             <li className="nav-item" >
@@ -18,7 +18,7 @@ const Nav = (props) => {
                     onClick={() => props.onHandleSetRoute(1)}
                 >
                     <i className="fal fa-shopping-bag"></i>
-                    Quản lý sản phẩm
+                    製品管理　　　　　
                 </button>
             </li>
         </ul>
