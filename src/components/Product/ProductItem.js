@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 const ProductItem = (props) => {
     
-    const {id, name_prd, price, is_hot, is_sale, image} = props.product;
+    const {id, name_prd, price, is_hot, is_sale, image, desc} = props.product;
     
     var img = require(`./Image/${image}.jpg`).default;
     
@@ -31,7 +31,9 @@ const ProductItem = (props) => {
                 {is_hot&&<span className="badge bg-danger">hot</span>}                                                             
                 {is_sale&&<span className="badge bg-success">sale</span>}                                  
             </td>
-            <td></td>
+            <td>
+                {desc}
+            </td>
             
             <td>
                 <button type="button" className="btn btn-primary" onClick={() => handleGetItem(id)}>

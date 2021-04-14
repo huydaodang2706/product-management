@@ -132,8 +132,8 @@ export const Addproduct = (props) => {
                             </div>
                         </div>
                         <div className="col-md-12 mt-4 text-right">
-                            <button name="sbm" type="submit" className="btn btn-success" onClick={handleAdd}>Thêm mới</button>{'  '}
-                            <button type="reset" className="btn btn-warning" onClick={onHandleReset}>Làm mới</button>
+                            <button name="sbm" type="submit" className="btn btn-success" onClick={handleAdd}>Save</button>{'  '}
+                            <button type="reset" className="btn btn-warning" onClick={onHandleReset}>Reset</button>
                         </div>
                     </div>
                 </form>
