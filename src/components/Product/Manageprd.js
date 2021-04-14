@@ -14,6 +14,7 @@ export const Manageprd = (props) => {
     const [modal, setModal] = useState(false);
     const [modalEdit, setModalEdit] = useState(false);
     const [id, setId] = useState(0);
+    const [item, setItem] = useState({});
     const [items, addItem, putItem, deleteItem] = useStorage([]);
     
     let products = items;
@@ -40,6 +41,8 @@ export const Manageprd = (props) => {
     
     const handleGetItem = (id) => {
         setId(id);
+        let ite = items.find(item => item.id === id);
+        setItem(ite);
         setModalEdit(true);
     }
 
@@ -92,6 +95,7 @@ export const Manageprd = (props) => {
             {
                 modalEdit && <Editproduct 
                     id={id} 
+                    item={item}
                     onHandleSetModal={setModalEdit}
                     handleEdit={handleEdit}
                 />

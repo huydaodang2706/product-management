@@ -29,6 +29,9 @@ export const Editproduct = (props) => {
         }).then(res => {
             console.log(res.data);
             setForm(res.data);
+        }).catch(err => {
+            console.log(err);
+            setForm(props.item);
         })
     }, []);
     
@@ -62,7 +65,7 @@ export const Editproduct = (props) => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Add Product</h5>
+                <h5 className="modal-title" id="exampleModalLabel">Edit Product</h5>
                 <button 
                     type="button" 
                     className="btn-close" 
@@ -145,8 +148,8 @@ export const Editproduct = (props) => {
                             </div>
                         </div>
                         <div className="col-md-12 mt-4 text-right">
-                            <button name="sbm" type="submit" className="btn btn-success" onClick={handleEdit}>Lưu lại</button>{'  '}
-                            <button type="reset" className="btn btn-warning" onClick={onHandleReset}>Làm mới</button>
+                            <button name="sbm" type="submit" className="btn btn-success" onClick={handleEdit}>Save</button>{'  '}
+                            <button type="reset" className="btn btn-warning" onClick={onHandleReset}>Reset</button>
                         </div>
                     </div>
                 </form>

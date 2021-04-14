@@ -25,7 +25,7 @@ const ProductList = (props) => {
                 <th>Giá</th>
                 <th>Ảnh sản phẩm</th>
                 <th>Trạng thái</th>
-                <th>Danh mục</th>
+                <th>Mô tả</th>
                 <th>Hành động</th>
             </tr>
         </thead>
