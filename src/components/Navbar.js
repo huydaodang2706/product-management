@@ -5,16 +5,17 @@ const Nav = (props) => {
         <ul className="nav flex-column col-md-2 sidebar px-0" id="navbarNavDarkDropdown">
             <li className="nav-item">
                 <button 
-                    className="btn btn-primary btn-lg mt-1"
+                    style={{background: '#2B60DE', width: '200px', height: '50px', color: '#FFF', margin: '5px', border:'none'}}
                     onClick={() => props.onHandleSetRoute(0)}
                 >
-                    <i className="fal fa-tachometer"></i> &nbsp;
-                    ダッシュボード
+                    <i className="fal fa-tachometer"></i>
+                    ダッシュボード       
                 </button>
             </li>
             <li className="nav-item" >
                 <button 
-                    className="btn btn-primary btn-lg mt-2"
+                    style={{background: '#2B60DE', width: '200px', height: '50px',  color: '#FFF', margin: '5px', border: 'none'}}
+                 
                     onClick={() => props.onHandleSetRoute(1)}
                 >
                     <i className="fal fa-shopping-bag"></i>
